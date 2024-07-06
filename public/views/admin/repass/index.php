@@ -17,7 +17,7 @@
         include_once($_SERVER['DOCUMENT_ROOT'].'/montera/app/config/config.php');
         $importAuthen = new Import('authen');
 
-        if(IsAuthen::isAuthen()){
+        if(IsAuthen::isAuthen() == false) {
             header("Location: /montera/app/public/views/admin/home");
         }
     ?>

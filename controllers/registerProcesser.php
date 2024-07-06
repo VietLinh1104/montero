@@ -15,7 +15,15 @@
         $registerProcessing = new QuanLy($fullname, $username, $hashPassword, $email);
         $registerProcessing->addQuanLy();
 
-        header('Location:'.PAGE_PATH.'admin/register');
+        $response = [
+            'type' => 'success',
+            'message' => 'Đăng ký thành công !'        
+        ];
+
+        $url= PAGE_PATH.'admin/login';
+
+        alert($url, $response);
+
         exit();
     }
 

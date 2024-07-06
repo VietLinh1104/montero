@@ -31,14 +31,33 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                     // Lưu thông tin vào session
                     $_SESSION['user_id'] = $user_id;
                     $_SESSION['roleUser'] = $role;
-                    echo "[Model-loginProcessing/if] Đăng nhập thành công.";
-                    header("Location: /montera/app/public/views/admin/home");
+                    
+                    // Đăng nhập thành công
+                    $response = [
+                        'type' => 'success',
+                        'message' => 'Đăng nhập thành công !'        
+                    ];
+                    $url= PAGE_PATH.'admin/home';
+                    alert($url, $response);
+
                 } else {
-                    echo "[Model-loginProcessing/if] Mật khẩu không đúng.";
+                    // echo "[Model-loginProcessing/if] Mật khẩu không đúng.";
+                    $response = [
+                        'type' => 'danger',
+                        'message' => 'Mật khẩu không đúng !'        
+                    ];
+                    $url= PAGE_PATH.'admin/login';
+                    alert($url, $response);
                 }
             }
         } else {
-            echo "[Model-loginProcessing/if] Không tìm thấy username '".$username."'.";
+            // echo "[Model-loginProcessing/if] Không tìm thấy username '".$username."'.";
+            $response = [
+                'type' => 'danger',
+                'message' => 'Không tìm thấy username "'.$username.'" !'        
+            ];
+            $url= PAGE_PATH.'admin/login';
+            alert($url, $response);
         }
 
     } catch (PDOException $e) {

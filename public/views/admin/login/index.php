@@ -47,6 +47,8 @@
                     <div class="container-fruid pt-1">
                         <div class="row">
 
+                         <?php include_once( ROOT_PATH. ELEMENTS_PATH.'admin/Alerts.php')?>
+
                             <div class="col pe-2">
                                 <h5 class="font-family-poppins font-semibold- fs-16">Form đăng nhập</h5>
                                 <p class="text-gray-light fs-14">Đăng nhập tài khoản.</p>
