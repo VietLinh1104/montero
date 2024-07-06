@@ -11,3 +11,12 @@ CREATE TABLE quanly(
     quanLy_id VARCHAR(225) PRIMARY KEY,
     user_id VARCHAR(225)
 );
+
+CREATE TABLE products (
+    id VARCHAR(255) NOT NULL,
+    modelName VARCHAR(255) NOT NULL,
+    brandName VARCHAR(255) NOT NULL,
+    price VARCHAR(255) NOT NULL,
+    imgPath VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id)
+)

@@ -5,9 +5,9 @@
     $importAc = new Import('usecase');
     $importAuthen = new Import('authen');
 
-    function getList($table){
+    function getList($table,$roll){
         if(IsAuthen::isAuthen()){
-            if($_SESSION['roleUser'] == 'QL'){
+            if($_SESSION['roleUser'] == $roll){
                 $dbHandler = new MySQL(DB_HOST, DB_USER, DB_PASS, DB_NAME);
     
                 $result = $dbHandler->getAllData($table);

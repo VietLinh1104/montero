@@ -21,10 +21,10 @@
             $role = $_SESSION['roleUser'];
             switch ($role) {
                 case "QL":
-                    $list = array('Home'=>'home','Product Manager'=>'quanly/khoa/listkhoa', 'User Manager'=>'quanly/lop/listLop', 'Customer Order'=>'quanly/mon/listMon');
+                    $list = array('Home'=>'admin/home','Product Manager'=>'admin/product/listproduct', 'User Manager'=>'admin/product/listproduct', 'Customer Order'=>'quanly/mon/listMon');
                   break;
                 default:
-                    $list = array('Home'=>'home');
+                    $list = array('Home'=>'admin/home');
               }
 
         }else{
@@ -34,7 +34,7 @@
         foreach ($list as $value => $path) {
             echo'
                 <div class="list-group list-group-flush" id="listGroup">
-                    <a href="'.PAGE_PATH.'admin/'.$path.'" class="list-group-item  list-group-item-action px-10px mx-1">'.$value.'</a>
+                    <a href="'.PAGE_PATH.$path.'" class="list-group-item  list-group-item-action px-10px mx-1">'.$value.'</a>
                 </div>
             ';
         }

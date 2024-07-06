@@ -4,8 +4,6 @@
 
         if (isset($_FILES[$fileType]) && $_FILES[$fileType]["error"] == 0) {
             $filename = $_FILES[$fileType]["name"];
-            $filetype = $_FILES[$fileType]["type"];
-            $filesize = $_FILES[$fileType]["size"];
             $fileExtension = pathinfo($filename, PATHINFO_EXTENSION);
     
             $newFilename =  $fileType.".". $fileExtension;
