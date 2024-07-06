@@ -1,6 +1,5 @@
 <?php
     include_once($_SERVER['DOCUMENT_ROOT'].'/montera/app/config/config.php');
-    include_once($_SERVER['DOCUMENT_ROOT'].'/montera/app/config/variable.php');
     include_once(ROOT_PATH. CORE_PATH. 'MySQL.php');
     $importAc = new Import('usecase');
     $importAuthen = new Import('authen');

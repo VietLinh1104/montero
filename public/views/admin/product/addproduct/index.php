@@ -55,6 +55,8 @@
                     <div class="container-fruid pt-1">
                         <div class="row">
 
+                            <?php include_once( ROOT_PATH. ELEMENTS_PATH.'admin/Alerts.php')?>
+
                             <div class="col pe-2">
                                 <h5 class="font-family-poppins font-semibold- fs-16"></h5>
                                 <p class="text-gray-light fs-14">Form thêm sản phẩm.</p>
@@ -62,7 +64,7 @@
                             <div class="col-10 pb-0">
                                 
                                 <!-- form -->
-                                <form action="<?php echo CONTROLLERS_PATH?>quanly/khoamanager/addKhoa.php" method="post" enctype="multipart/form-data">
+                                <form action="<?php echo CONTROLLERS_PATH?>addItem.php" method="post" enctype="multipart/form-data">
                                     <div class="row ">
                                         <div class="col">
                                             <label for="modelName" class="font-semibold- fs-16">Tên Sản Phẩm</label>
@@ -79,7 +81,7 @@
                                     <div class="row mb-2">
                                         <div class="col">
                                             <label for="price" class="font-semibold- fs-16">Giá bán</label>
-                                            <input type="text" id="price" name ="price"  placeholder="Giá bán..." class="form-control px-10px mb-10px">
+                                            <input type="number" id="price" name ="price"  placeholder="Giá bán..." class="form-control px-10px mb-10px">
                                         </div>
 
                                         <div class="col">

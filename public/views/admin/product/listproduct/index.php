@@ -1,4 +1,9 @@
-<?php include_once($_SERVER['DOCUMENT_ROOT'].'/montera/app/config/config.php');?>
+<?php include_once($_SERVER['DOCUMENT_ROOT'].'/montera/app/config/config.php');
+    include_once(ROOT_PATH.CORE_PATH.'MySQL.php');
+
+    $curl = new Import('crud');
+    $importAuthen = new Import('authen');
+    ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,8 +19,7 @@
 </head>
 <body>
     <?php
-        include(ROOT_PATH.CORE_PATH.'MySQL.php');
-        $importAuthen = new Import('authen');
+        
 
         if(IsAuthen::isAuthen()){
             $role = $_SESSION['roleUser'];
@@ -60,6 +64,8 @@
                     <div class="container-fruid pt-1">
                         <div class="row">
 
+                            <?php include_once( ROOT_PATH. ELEMENTS_PATH.'admin/Alerts.php')?>
+
                             <div class="col pe-2">
                                 <h5 class="font-family-poppins font-semibold- fs-16"></h5>
                                 <p class="text-gray-light fs-14">Bảng danh sách</p>
@@ -80,7 +86,6 @@
                                         <tbody>
 
                                             <?php
-                                                include(ROOT_PATH. CONTROLLERS_PATH. 'getList.php');
                                                 $result = getList('products', 'QL');
 
                                                 if(!empty($result)){
