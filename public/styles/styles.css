@@ -1,0 +1,6 @@
+.imglist{
+    width: 80px !important;
+    height: auto;
+    object-fit: cover;
+    overflow: hidden;
+}

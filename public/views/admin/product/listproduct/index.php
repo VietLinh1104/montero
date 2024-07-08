@@ -15,6 +15,7 @@
     <link rel="apple-touch-icon" href="https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_180,h_180/https://linhkienbandan.com/wp-content/uploads/2015/03/cropped-favicon-1.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="<?php echo STYLES_PATH.'sass.css'; ?>">
+    <link rel="stylesheet" href="<?php echo STYLES_PATH.'styles.css'; ?>">
     <link rel="icon" type="image/png" href="<?php echo MEDIA_PATH?>favicon.png">
 </head>
 <body>
@@ -69,6 +70,7 @@
                             <div class="col pe-2">
                                 <h5 class="font-family-poppins font-semibold- fs-16"></h5>
                                 <p class="text-gray-light fs-14">Bảng danh sách</p>
+
                             </div>
                             <div class="col-10 pb-0">
                                 
@@ -83,7 +85,7 @@
                                             <th scope="col">Giá bán</th>
                                             <th scope="col">Hình ảnh</th>
                                             </tr>
-                                         
+                                            
 
                                         </thead>
                                         <tbody>
@@ -104,7 +106,11 @@
                                                             <td>'.$modelName.'</td>
                                                             <td>'.$brandName.'</td>
                                                             <td>'.$price.'</td>
-                                                            <td><img src="'.CONTROLLERS_PATH.'upload/'.$filePath.'" alt="" class="imgList"></td>
+                                                            <td>
+                                                                <div class="imglist">
+                                                                    <img src="'.CONTROLLERS_PATH.'upload/'.$filePath.'" alt="" class="">
+                                                                </div>
+                                                            </td>
     
                                                         </tr>
                                                         
