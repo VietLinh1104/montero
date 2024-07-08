@@ -52,6 +52,24 @@ class MySQL {
         }
     }
 
+    public function updateData($table, $data, $idField, $idValue) {
+        try {
+            $fields = array_keys($data);
+            $setString = implode(' = ?, ', $fields) . ' = ?';
+            
+            $sql = "UPDATE $table SET $setString WHERE $idField = ?";
+            $stmt = $this->conn->prepare($sql);
+            
+            $values = array_values($data);
+            $values[] = $idValue;
+            
+            $stmt->execute($values);
+            echo "Cập nhật dữ liệu thành công.";
+        } catch(PDOException $e) {
+            echo "Lỗi khi cập nhật dữ liệu: " . $e->getMessage();
+        }
+    }
+
     public function getAllData($table) {
         try {
             $sql = "SELECT * FROM $table";

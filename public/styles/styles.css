@@ -1,6 +1,30 @@
 .imglist{
-    width: 80px !important;
-    height: auto;
-    object-fit: cover;
+    height: auto !important;
+    width: 80px;
+    vertical-align: middle; 
+    
+}
+.img-container{
+    width: 80px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
+    
+}
+
+tr td {
+    vertical-align: middle; /* Căn giữa theo chiều dọc */
+}
+
+tr th {
+    vertical-align: middle; /* Căn giữa theo chiều dọc */
+}
+
+.row-list:hover td {
+    background-color: rgba(0, 0, 0, 0.048);
+}
+.row-list:hover th{
+    background-color: rgba(0, 0, 0, 0.048);
 }

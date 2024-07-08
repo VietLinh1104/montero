@@ -84,8 +84,10 @@
                                             <th scope="col">Tên hãng</th>
                                             <th scope="col">Giá bán</th>
                                             <th scope="col">Hình ảnh</th>
+                                            <th scope="col">Action</th>
+                                            <th scope="col"></th>
                                             </tr>
-                                            
+                                                                                        
 
                                         </thead>
                                         <tbody>
@@ -99,18 +101,21 @@
                                                         $brandName = $row['brandName'];
                                                         $price = $row['price'];
                                                         $filePath = $row['filePath'];
+                                                        $id = $row['id'];
     
                                                         echo '
-                                                        <tr>
+                                                        <tr class="row-list">
                                                             <th scope="row">'.$index.'</th>
                                                             <td>'.$modelName.'</td>
                                                             <td>'.$brandName.'</td>
                                                             <td>'.$price.'</td>
                                                             <td>
-                                                                <div class="imglist">
-                                                                    <img src="'.CONTROLLERS_PATH.'upload/'.$filePath.'" alt="" class="">
+                                                                <div class="img-container">
+                                                                    <img src="'.CONTROLLERS_PATH.'upload/'.$filePath.'" alt="" class="imglist">
                                                                 </div>
                                                             </td>
+                                                            <td class="col-1"><a href="'.PAGE_PATH.'admin/product/editproduct?id='.$id.'" class="font-semibold- text-decoration-none">Edit</a></td>
+                                                            <td><a href="'.CONTROLLERS_PATH.'deleteItem.php?id='.$id.'" class="font-semibold- text-decoration-none">Delete</a></td>
     
                                                         </tr>
                                                         
@@ -181,6 +186,8 @@
         });
     </script>
     
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</body>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script></body>
 </html>

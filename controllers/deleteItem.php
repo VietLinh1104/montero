@@ -1,0 +1,44 @@
+<?php
+include_once($_SERVER['DOCUMENT_ROOT'].'/montera/app/config/config.php');
+include_once(ROOT_PATH. CORE_PATH. 'MySQL.php');
+
+$produce = new Import('actor');
+$authen = new Import('authen');
+
+if (isset($_GET['id'])) {
+    if(IsAuthen::isAuthen()){
+        
+        $id = $_GET['id'];
+    
+        
+        // insert to database
+        
+        try {
+            $dbHandler = new MySQL(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+            $table = 'products';
+            $dbHandler->deleteData($table,'id',$id);
+    
+            echo "<script>console.log('[Controller/deleteItem] xóa sản phẩm thành công!');</script>";
+            $response = [
+                'type' => 'success',
+                'message' => 'xóa sản phẩm thành công!'        
+            ];
+            $url= PAGE_PATH.'admin/product/listproduct';
+            alert($url, $response);
+            
+        } catch (PDOException $e) {
+            echo "<script>console.log('[Controller/deleteItem] Lỗi khi xóa sản phẩm: " . $e->getMessage().");</script>";
+            $response = [
+                'type' => 'danger',
+                'message' => 'Lỗi khi xóa sản phẩm: ' . $e->getMessage()        
+            ];
+            $url= PAGE_PATH.'admin/product/addproduct';
+            alert($url, $response);
+        }
+
+    }
+
+}
+
+
+?>

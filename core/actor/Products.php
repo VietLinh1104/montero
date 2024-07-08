@@ -12,7 +12,7 @@ class Products{
     private $filePath;
 
     //constructor
-    public function __construct($modelName, $brandName, $price, $file){
+    public function __construct($modelName = '', $brandName = '', $price = 0, $file = ''){
         $this->id = $id = md5(uniqid('', true));
         $this->modelName = $modelName;
         $this->brandName = $brandName;
