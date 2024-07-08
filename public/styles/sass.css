@@ -14813,4 +14813,10 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+.imgList{
+  width: 80px !important;
+  height: auto;
+  object-fit: cover;
+  overflow: hidden;}
+
 /*# sourceMappingURL=styles.css.map */

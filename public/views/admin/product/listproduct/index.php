@@ -78,10 +78,13 @@
                                         <thead>
                                             <tr>
                                             <th scope="col">#</th>
-                                            <th scope="col">ID</th>
-                                            <th scope="col">Tên Khoa</th>
-                                            <th scope="col">Mã Khoa</th>
+                                            <th scope="col">Tên sản phẩm</th>
+                                            <th scope="col">Tên hãng</th>
+                                            <th scope="col">Giá bán</th>
+                                            <th scope="col">Hình ảnh</th>
                                             </tr>
+                                         
+
                                         </thead>
                                         <tbody>
 
@@ -90,16 +93,18 @@
 
                                                 if(!empty($result)){
                                                     foreach ($result as $index => $row) {
-                                                        $khoa_id = $row['modelName'];
-                                                        $khoa = $row['brandName'];
-                                                        $maKhoa = $row['price'];
+                                                        $modelName = $row['modelName'];
+                                                        $brandName = $row['brandName'];
+                                                        $price = $row['price'];
+                                                        $filePath = $row['filePath'];
     
                                                         echo '
                                                         <tr>
                                                             <th scope="row">'.$index.'</th>
-                                                            <td>'.$khoa_id.'</td>
-                                                            <td>'.$khoa.'</td>
-                                                            <td>'.$maKhoa.'</td>
+                                                            <td>'.$modelName.'</td>
+                                                            <td>'.$brandName.'</td>
+                                                            <td>'.$price.'</td>
+                                                            <td><img src="'.CONTROLLERS_PATH.'upload/'.$filePath.'" alt="" class="imgList"></td>
     
                                                         </tr>
                                                         
