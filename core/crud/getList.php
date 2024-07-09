@@ -5,25 +5,25 @@
     $importAuthen = new Import('authen');
 
     function getList($table,$roll){
-        if(IsAuthen::isAuthen()){
-            if($_SESSION['roleUser'] == $roll){
-                $dbHandler = new MySQL(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-    
-                $result = $dbHandler->getAllData($table);
+       
+            
+        $dbHandler = new MySQL(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
-                if (!empty($result)) {
-                    foreach ($result as $row) {
-                        $rowData = [];
-                        foreach ($row as $column => $value) {
-                            $rowData[$column] = $value;
-                        }
-                        $twoDimensionalArray[] = $rowData;
-                    }
+        $result = $dbHandler->getAllData($table);
 
-                    return  $twoDimensionalArray;
-                }  
+        if (!empty($result)) {
+            foreach ($result as $row) {
+                $rowData = [];
+                foreach ($row as $column => $value) {
+                    $rowData[$column] = $value;
+                }
+                $twoDimensionalArray[] = $rowData;
             }
-        }
+
+            return  $twoDimensionalArray;
+        }  
+            
+        
 
     }
 ?>

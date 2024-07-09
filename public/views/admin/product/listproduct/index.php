@@ -80,10 +80,10 @@
                                         <thead>
                                             <tr>
                                             <th scope="col">#</th>
+                                            <th scope="col">Hình ảnh</th>
                                             <th scope="col">Tên sản phẩm</th>
                                             <th scope="col">Tên hãng</th>
                                             <th scope="col">Giá bán</th>
-                                            <th scope="col">Hình ảnh</th>
                                             <th scope="col">Action</th>
                                             <th scope="col"></th>
                                             </tr>
@@ -106,14 +106,14 @@
                                                         echo '
                                                         <tr class="row-list">
                                                             <th scope="row">'.$index.'</th>
-                                                            <td>'.$modelName.'</td>
-                                                            <td>'.$brandName.'</td>
-                                                            <td>'.$price.'</td>
-                                                            <td>
+                                                            <td class="">
                                                                 <div class="img-container">
                                                                     <img src="'.CONTROLLERS_PATH.'upload/'.$filePath.'" alt="" class="imglist">
                                                                 </div>
                                                             </td>
+                                                            <td>'.$modelName.'</td>
+                                                            <td>'.$brandName.'</td>
+                                                            <td>'.$price.'</td>
                                                             <td class="col-1"><a href="'.PAGE_PATH.'admin/product/editproduct?id='.$id.'" class="font-semibold- text-decoration-none">Edit</a></td>
                                                             <td><a href="'.CONTROLLERS_PATH.'deleteItem.php?id='.$id.'" class="font-semibold- text-decoration-none">Delete</a></td>
     

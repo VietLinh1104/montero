@@ -1,5 +1,6 @@
 <?php
     include_once($_SERVER['DOCUMENT_ROOT'] . '/montera/app/config/config.php'); 
+    include_once(ROOT_PATH.CORE_PATH.'MySQL.php');
 ?>
 
 

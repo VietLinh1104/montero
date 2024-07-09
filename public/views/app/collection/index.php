@@ -1,6 +1,6 @@
 <?php
     include_once($_SERVER['DOCUMENT_ROOT'] . '/montera/app/config/config.php'); 
-    include(ROOT_PATH . CONTROLLERS_PATH . "database/connDB.php");
+    include_once(ROOT_PATH. CORE_PATH. 'MySQL.php');
 ?>
 
 <!DOCTYPE html>
@@ -10,13 +10,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Collection | MONTERO</title>
-    <link rel="stylesheet" href="<?php echo VIEW_PATH?>css/styles.css">
+    <link rel="stylesheet" href="<?php echo STYLES_PATH?>sass.css">
     <link rel="icon" type="image/png" href="/favicon.png">
 </head>
 <body>
-
-    
-    <?php include(ROOT_PATH.VIEW_PATH.'elements/Navbar.php');?>
+    <?php
+        include(ROOT_PATH. ELEMENTS_PATH .'app/Navbar.php');
+    ?>
     
     <!-- Banner Text -->
     <div class="container-fluid " id="banner">
@@ -58,11 +58,11 @@
 
         <div class="container-md d-flex flex-row justify-content-center">
            
-            <div class="d-flex flex-wrap justify-content-around row p-2">
+            <div class="d-flex flex-wrap row p-2 justify-content-center">
                 <!-- <source src="../../../controllers/database/connDB.php"> -->
 
                 <?php
-                    include(ROOT_PATH. VIEW_PATH.'/elements/CardCollection.php');
+                    include(ROOT_PATH. ELEMENTS_PATH.'app/CardCollection.php');
                 ?>
                
 
@@ -76,7 +76,7 @@
         <!-- End Rowcard -->
 
         <div class="container-md d-flex justify-content-center">
-            <button onclick="location.href='<?php echo VIEW_PATH.'page/home/index.php'?>'" class="btn btn-dynamic outline-square font-family-poppins px-2">BACK TO HOME
+            <button onclick="location.href='<?php echo PAGE_PATH.'app/home/index.php'?>'" class="btn btn-dynamic outline-square font-family-poppins px-2">BACK TO HOME
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
                 </svg>
@@ -88,7 +88,7 @@
     <div class="container-fruid p-3 bg-black"></div>
 
     <?php 
-        include(ROOT_PATH.VIEW_PATH.'elements/Footer.php')
+        include(ROOT_PATH.ELEMENTS_PATH.'app/Footer.php')
     ?>
 
     
