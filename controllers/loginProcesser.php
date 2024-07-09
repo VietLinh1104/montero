@@ -18,8 +18,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         // Lấy thông tin người dùng từ cơ sở dữ liệu
         $result = $dbHandler->getDataByField('users', 'username', $username);
 
+
         if (!empty($result)) {
             foreach ($result as $row) {
+
+                // lưu thông tin người dùng vào biến
                 $usernameSV = $row['username'];
                 $fullnameSV = $row['fullname'];
                 $user_id = $row['user_id'];
@@ -29,6 +32,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 // Kiểm tra mật khẩu
                 if (password_verify($password, $passwordSV)) {
                     // Lưu thông tin vào session
+                    // khởi tạo session
                     $_SESSION['user_id'] = $user_id;
                     $_SESSION['roleUser'] = $role;
                     

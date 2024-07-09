@@ -33,11 +33,13 @@
     
     <div class="d-flex">
         <!-- sidebar -->
+         <!-- thêm sidebar vào view -->
         <?php include(ROOT_PATH. ELEMENTS_PATH."admin/SidebarAd.php")?>
 
         <div id="page-content-wrapper" class="flex-grow-1">
             
             <!-- navbar -->
+             <!-- thêm element navbar vào view -->
             <?php include(ROOT_PATH. ELEMENTS_PATH."admin/NavbarMain.php")?>
 
             <!-- container -->
@@ -54,7 +56,7 @@
                     
                     <div class="container-fruid pt-1">
                         <div class="row">
-
+                        
                             <?php include_once( ROOT_PATH. ELEMENTS_PATH.'admin/Alerts.php')?>
 
                             <div class="col pe-2">

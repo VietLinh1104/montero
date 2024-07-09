@@ -21,16 +21,18 @@
 <body>
     <?php
         
-
+        // kiểm tra xem có đang đăng nhập khoong
         if(IsAuthen::isAuthen()){
             $role = $_SESSION['roleUser'];
             if($role == 'QL'){
                 //pass
             }else{
+                // nếu không đăng nhập chuyển về trang access
                 header("Location: ".PAGE_PATH."admin/access");
             }
 
         }else{
+            // nếu không đăng nhập chuyển về trang home
             header("Location: ".PAGE_PATH."admin/home");
         }
     ?>
@@ -38,11 +40,13 @@
     
     <div class="d-flex">
         <!-- sidebar -->
+         <!-- include sidebar -->
         <?php include(ROOT_PATH. ELEMENTS_PATH."admin/SidebarAd.php")?>
 
         <div id="page-content-wrapper" class="flex-grow-1">
             
             <!-- navbar -->
+             <!-- include navbar -->
             <?php include(ROOT_PATH. ELEMENTS_PATH."admin/NavbarMain.php")?>
 
             <!-- container -->
@@ -65,6 +69,7 @@
                     <div class="container-fruid pt-1">
                         <div class="row">
 
+                        <!-- include thông báo -->
                             <?php include_once( ROOT_PATH. ELEMENTS_PATH.'admin/Alerts.php')?>
 
                             <div class="col pe-2">
@@ -79,13 +84,13 @@
                                     <table class="table me-2">
                                         <thead>
                                             <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">Hình ảnh</th>
-                                            <th scope="col">Tên sản phẩm</th>
-                                            <th scope="col">Tên hãng</th>
-                                            <th scope="col">Giá bán</th>
-                                            <th scope="col">Action</th>
-                                            <th scope="col"></th>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Hình ảnh</th>
+                                                <th scope="col">Tên sản phẩm</th>
+                                                <th scope="col">Tên hãng</th>
+                                                <th scope="col">Giá bán</th>
+                                                <th scope="col">Action</th>
+                                                <th scope="col"></th>
                                             </tr>
                                                                                         
 
@@ -93,6 +98,7 @@
                                         <tbody>
 
                                             <?php
+                                            // lấy dữ liệu từ database 
                                                 $result = getList('products', 'QL');
 
                                                 if(!empty($result)){
@@ -114,6 +120,7 @@
                                                             <td>'.$modelName.'</td>
                                                             <td>'.$brandName.'</td>
                                                             <td>'.$price.'</td>
+                                                            
                                                             <td class="col-1"><a href="'.PAGE_PATH.'admin/product/editproduct?id='.$id.'" class="font-semibold- text-decoration-none">Edit</a></td>
                                                             <td><a href="'.CONTROLLERS_PATH.'deleteItem.php?id='.$id.'" class="font-semibold- text-decoration-none">Delete</a></td>
     

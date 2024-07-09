@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Car Name | MONTERO</title>
-    <link rel="stylesheet" href="<?php echo VIEW_PATH?>css/styles.css">
+    <link rel="stylesheet" href="<?php echo STYLES_PATH?>sass.css">
     <link rel="icon" type="image/png" href="/favicon.png">
 </head>
 <body>
@@ -33,13 +33,13 @@
 
                     <!-- nav item -->
                     <li class="nav-item  active">
-                        <a class="nav-link text-white" href="<?php echo VIEW_PATH; ?>page/home/">HOME</a>
+                        <a class="nav-link text-white" href="<?php echo PAGE_PATH; ?>app/home/">HOME</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="" id="nav-item-aboutus">ABOUT US</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="<?php echo VIEW_PATH; ?>page/collection">COLLECTION</a>
+                        <a class="nav-link text-white" href="<?php echo PAGE_PATH; ?>app/collection">COLLECTION</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="#">FEATURES</a>
@@ -72,10 +72,30 @@
         if(isset($_GET['id'])) {
             // Lấy giá trị của tham số 'image'
             $id = $_GET['id'];
+            include_once(ROOT_PATH.CORE_PATH.'MySQL.php');
+            new Import('crud');
             
-            
+            $dbHandler = new MySQL(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+            $result = $dbHandler->getDataByField('products','id',$id);
+
+            if(!empty($result)){
+                foreach ($result as $row) {
+                    $rowData = [];
+                    foreach ($row as $column => $value) {
+                        $rowData[$column] = $value;
+                    }
+                    $twoDimensionalArray[] = $rowData;
+                }
+    
+                return  $twoDimensionalArray;
+
+            }else{
+
+            }
+
+
             // Tạo đường dẫn đến hình ảnh
-            $image_path = "/app/controllers/upload/{$id}";
+          
 
         }
     ?>
@@ -89,7 +109,7 @@
         </div>
         <div class="col-9 bg-white"></div>
         <div class="col p-1 d-flex flex-column align-items-center">
-            <h1 class="font-family-poppins font-medium- pt-3 m-0">Model S</h1>
+            <h1 class="font-family-poppins font-medium- pt-3 m-0"><?php echo $modelName ?></h1>
             <div class="row my-2 w-100">
 
                 <div class="col  ">

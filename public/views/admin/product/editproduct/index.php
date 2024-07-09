@@ -29,6 +29,7 @@
             header("Location: ".PAGE_PATH."admin/home");
         }
 
+        // nhận dữ liệu từ parameter
         $id = $_GET["id"];
     ?>
 
