@@ -1,1 +1,82 @@
-/upload/
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Dependency directories
+bower_components/
+jspm_packages/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional REPL history
+.node_repl_history
+
+# Environment variable files
+.env
+.env.test
+.env.production
+
+# MacOS specific files
+.DS_Store
+
+# Windows specific files
+Thumbs.db
+ehthumbs.db
+
+# Python specific files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# PHP specific files
+vendor/
+
+# Composer
+composer.lock
+
+# Laravel specific files
+/storage/*.key
+.env.*.php
+.env.php
+.env
+
+# Logs and debug files
+*.log
+*.sql
+*.sqlite
+
+# IDE specific files
+.idea/
+.vscode/
+
+# SASS cache
+.sass-cache/
+
+# Code coverage reports
+coverage/
+*.lcov
+
+# Dependency directories
+node_modules/
+bower_components/
+
+# Temporary files
+*.tmp
+*.swp
+
+# Build directories
+dist/
+build/
+
+# Temporary files
+tmp/
+temp/
+upload/
