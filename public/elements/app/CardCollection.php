@@ -13,7 +13,7 @@ $result = getList('products', 'QL');
           $filePath = $row['filePath'];
           $id = $row['id'];
 
-          echo '<div class="p-0 card outline-square bg-white-item mb-4 mx-1" style="width: 250px">';
+          echo '<div class="p-0 card outline-square bg-white-item mb-4 mx-1" onclick="location.href='.PAGE_PATH.'app/collection?id='.$id.'" style="width: 250px">';
               echo '<img src="'.CONTROLLERS_PATH.'upload/'.$filePath.'" class="card-img-top outline-square" alt="...">';
               echo '<div class="card-body text-black">';
                   echo '<h6 class="card-text font-family-poppins font-semibold- mb-1 fs-16">'.$brandName.' - '.$modelName.'</h6>';
