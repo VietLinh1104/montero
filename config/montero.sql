@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 08, 2024 lúc 10:11 AM
+-- Thời gian đã tạo: Th7 09, 2024 lúc 07:18 AM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.0.30
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `montero`
 --
-CREATE DATABASE IF NOT EXISTS `montero` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `montero`;
 
 -- --------------------------------------------------------
 
@@ -42,7 +40,9 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `modelName`, `brandName`, `price`, `filePath`) VALUES
-('de904962de2005458d61e5277c9deb38', 'dsafa', 'dsafasf', '20000', 'de904962de2005458d61e5277c9deb38/imgPath.png');
+('3ac59f9685278ada8e1596fe5a72db08', 'item 1', 'brand 1', '20000', '3ac59f9685278ada8e1596fe5a72db08/imgPath.png'),
+('9c2ca0db639be40966afd794c9d24cd5', 'item ', 'brand 1', '20000', 'b0672f81edfe3db031e563d872050c0e/imgPath.png'),
+('beb7a6222cdcc408865955ddfa0d93fa', 'item 2', 'brand 1', '50000', 'beb7a6222cdcc408865955ddfa0d93fa/imgPath.png');
 
 -- --------------------------------------------------------
 
