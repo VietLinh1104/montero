@@ -62,6 +62,7 @@
                 <!-- <source src="../../../controllers/database/connDB.php"> -->
 
                 <?php
+                // include danh sách card
                     include(ROOT_PATH. ELEMENTS_PATH.'app/CardCollection.php');
                 ?>
                

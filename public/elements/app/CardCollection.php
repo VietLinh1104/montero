@@ -3,15 +3,21 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/montera/app/config/config.php');
 include_once(ROOT_PATH.CORE_PATH.'MySQL.php');
 new Import('crud');
 
+// lấy dữ liệu từ database trong baảng products 
 $result = getList('products', 'QL');
 
+
   if(!empty($result)){
+
+    // sử dụng hàm for để in lần lượt danh sách các sản phẩm
       foreach ($result as $index => $row) {
-          $modelName = $row['modelName'];
-          $brandName = $row['brandName'];
-          $price = $row['price'];
-          $filePath = $row['filePath'];
-          $id = $row['id'];
+
+        // các trường dữ liệu của sản phẩm
+          $modelName = $row['modelName']; // tên sản phẩm
+          $brandName = $row['brandName']; // tên thương hiệu
+          $price = $row['price'];         // giá sản phẩm
+          $filePath = $row['filePath'];   // đường dẫn ảnh
+          $id = $row['id'];               // id sản phẩm
 
           echo '<div class="p-0 card outline-square bg-white-item mb-4 mx-1" onclick="location.href=\''.PAGE_PATH.'app/order?id='.$id.'\'" style="width: 250px">';
                 echo '<img src="'.CONTROLLERS_PATH.'upload/'.$filePath.'" class="card-img-top outline-square" alt="...">';
